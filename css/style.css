@@ -87,6 +87,37 @@ footer {
   padding: 0;
 }
 
+/* Hamburger button (hidden on desktop) */
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.navbar-toggle .hamburger {
+  width: 28px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  position: relative;
+}
+.navbar-toggle .hamburger::before,
+.navbar-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+}
+.navbar-toggle .hamburger::before {
+  top: -8px;
+}
+.navbar-toggle .hamburger::after {
+  top: 8px;
+}
+
 .navbar-item a {
   text-decoration: none;
   color: #fff;
@@ -730,6 +761,11 @@ footer {
   padding: 20px 0;
 }
 
+.carrusel {
+  position: relative;
+  overflow: hidden;
+}
+
 .carrusel-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -738,16 +774,37 @@ footer {
 }
 
 .carrusel-item {
-  min-width: 90%; /* Cada tarjeta ocupa el 100% del ancho visible */
+  flex: 0 0 90%;
+  min-width: 90%; /* Cada tarjeta ocupa la mayor parte del ancho visible */
   min-height: 200px;
   margin: 0 10px;
-  flex: 0 0 auto;
+  box-sizing: border-box;
   /*     background-color: #444; */
   /*     border: 1px solid #861414; */
   border-radius: 8px;
   padding: 20px;
   /*     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .carrusel-item {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  .carrusel-container {
+    gap: 0;
+  }
+  .carrusel-btn.prev {
+    left: 8px;
+  }
+  .carrusel-btn.next {
+    right: 8px;
+  }
 }
 .carrusel-item h3 {
   font-size: 2rem;
@@ -835,17 +892,97 @@ video {
     font-size: 1rem;
   }
   .navbar {
-    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     padding: 10px 12px;
+    background: transparent;
+  }
+  .navbar.open {
+    background: rgba(0, 0, 0, 0.92);
+    padding-bottom: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   }
   .navbar-list {
+    display: none;
     flex-direction: column;
-    gap: 12px;
-    align-items: center;
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 12px 0 0;
+  }
+  .navbar.open .navbar-list {
+    display: flex;
+  }
+  .navbar-list li {
+    width: 100%;
+  }
+  .navbar-item a {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    text-align: left;
+  }
+  .navbar-item a:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .navbar-toggle {
+    display: block;
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0;
+    align-self: flex-start;
+  }
+  .navbar.open .navbar-toggle {
+    margin-bottom: 8px;
+  }
+  .navbar.open .navbar-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
   .banner {
     padding: 40px 15px;
     min-height: 260px;
+  }
+
+  /* Lecturas: stack video/texto en móvil */
+  .info-section .section-content {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .info-section .section-video {
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+  }
+  .info-section .section-video video {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  .info-section .section-text {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .temas-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    grid-auto-rows: minmax(120px, auto);
+  }
+  .tema-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .temas-section {
+    padding: 30px 0;
   }
 
   /* Presentacion: stack columns */
@@ -867,23 +1004,37 @@ video {
     gap: 20px;
     align-items: center;
   }
+  .areas .conte-areas .cada-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 520px;
+  }
+  .areas .conte-areas .cada-area .servicio-info,
+  .areas .conte-areas .cada-area .servicio-img {
+    width: 100%;
+  }
   .areas .conte-areas .cada-area .img-area {
     position: static;
     width: 100%;
     height: auto;
-    max-width: 420px;
+    max-width: 100%;
     object-fit: cover;
   }
   .areas .conte-areas .cada-area .grad-area {
     position: relative;
     width: 100%;
-    max-width: 420px;
+    max-width: 100%;
     height: auto;
     padding: 20px;
   }
 
   .title {
     font-size: 28px;
+  }
+  .areas .title {
+    color: #f8e71c;
   }
 
   /* Formulario: single column and flexible textarea */
@@ -937,4 +1088,21 @@ video {
     width: auto;
     padding: 10px 18px;
   }
+}
+
+/* Uniform image utility */
+.uniform-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Apply uniform sizing for servicio images */
+.servicio-img img {
+  width: 100%;
+  max-width: 420px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
 }
