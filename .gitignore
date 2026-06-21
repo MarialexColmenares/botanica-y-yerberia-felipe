@@ -1,0 +1,10 @@
+# Evitar subir las capturas de prueba del cliente
+form/
+
+# Archivos del sistema operativo (¡Súper importante!)
+.DS_Store
+Thumbs.db
+
+# Configuraciones locales de tu editor de código
+.vscode/
+*.log
