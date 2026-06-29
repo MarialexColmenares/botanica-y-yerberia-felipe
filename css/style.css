@@ -10,26 +10,41 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
 :root {
-  --color-black: #000; /* color de fondo oscuro principal */
-  --color-white: #fff; /* color de letra blanco */
-  --color-gray: #444; /* gris neutro para fondos y detalles */
-  --color-white-soft: #f5f5f5; /* blanco suave para fondos claros sin ser puro */
-  --color-red: #861414; /* rojo principal usado en botones e iconos y algunos titulos resaltados*/
-  --color-green: #25d366; /* verde para botones de acción o enlaces de contacto whatsapp */
-  --color-instagram: #e1306c; /* color de marca de Instagram para iconos o enlaces */
-  --color-hover: #86141474; /* color de hover para botones */
-  --color-overlay: rgba(
-    60,
-    60,
-    59,
-    0.7
-  ); /* capa semitransparente para fondos oscuros */
+  /* FONDO PRINCIPAL */
+  --color-verde-oscuro: #3a4f4a;
+
+  /* FONDOS SECUNDARIOS (Tarjetas de servicios, contenedores y bloque de testimonios)*/
+  --color-verde-claro: #65743b;
+
+  /* TEXTO PRINCIPAL Y TÍTULOS DESTACADOS: */
+  --color-amarillo-brillante: #f0f2ac;
+
+  /* TEXTO SECUNDARIO Y PÁRRAFOS:
+     Para los textos largos y descripciones (como la sección de testimonios o la info de Felipe), 
+     este tono vainilla suave es ideal porque no cansa la vista y aporta calidez al diseño. */
+  --color-amarillo-claro: #f0dd8e;
+
+  /* COLOR DE ACENTO (Botones de "Contáctanos", iconos y llamadas a la acción):*/
+  --color-amarillo-resaltado: #ffd11b;
+
+  /* HOVERS Y CAPAS (Ajustados a la nueva identidad botánica):
+     Un hover sutil con opacidad para los botones y una capa protectora para que los banners 
+     principales se tiñan con el nuevo misticismo verde. */
+  --color-hover: rgba(240, 221, 142, 0.4);
+  --color-overlay: rgba(58, 79, 74, 0.7);
+
+  /* Enlaces de contacto y redes estables */
+  --color-white: #ffffff;
+  --color-green: #25d366;
+  --color-instagram: #e1306c;
+  --color-negro: #000000;
 }
 
 main {
   flex: 1;
-  background-color: var(--color-black);
+  background-color: var(--color-verde-oscuro);
 }
 
 footer {
@@ -64,7 +79,7 @@ footer {
   justify-content: flex-start; /* Mantiene los elementos arriba */
 }
 .banner-amarres h1 {
-  color: var(--color-white);
+  color: var(--color-amarillo-resaltado);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-size: 2.8rem;
@@ -74,14 +89,14 @@ footer {
 }
 
 .banner-title {
-  color: var(--color-white);
+  color: var(--color-amarillo-resaltado);
   font-size: 2.8rem;
   margin-bottom: 15px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .banner-text {
-  color: var(--color-white);
+  color: var(--color-amarillo-brillante);
   font-size: 1.5rem;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
@@ -114,7 +129,7 @@ footer {
 .navbar-toggle .hamburger {
   width: 28px;
   height: 2px;
-  background: var(--color-white);
+  background: var(--color-amarillo-brillante);
   display: block;
   position: relative;
 }
@@ -125,7 +140,7 @@ footer {
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--color-white);
+  background: var(--color-amarillo-brillante);
 }
 .navbar-toggle .hamburger::before {
   top: -8px;
@@ -136,14 +151,14 @@ footer {
 
 .navbar-item a {
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-amarillo-brillante);
   font-size: 1.2rem;
   font-weight: bold;
   transition: color 0.2s;
 }
 
 .navbar-item a:hover {
-  color: var(--color-red);
+  color: var(--color-amarillo-claro);
 }
 
 .banner-contact-btn {
@@ -151,8 +166,8 @@ footer {
   margin: 20px auto 0 auto;
   width: 180px; /* ancho fijo */
   padding: 8px 0; /* menos padding lateral */
-  background-color: var(--color-red);
-  color: var(--color-white);
+  background-color: var(--color-amarillo-resaltado);
+  color: var(--color-verde-oscuro);
   font-size: 1.1rem;
   font-weight: bold;
   border: none;
@@ -174,7 +189,7 @@ footer {
   grid-gap: 4%;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-gray);
+  background-color: var(--color-verde-claro);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   margin: 8%;
   border-radius: 10px;
@@ -183,7 +198,7 @@ footer {
   padding: 4% 4% 4% 0;
 }
 .presentacion .info .titulo {
-  color: var(--color-red);
+  color: var(--color-amarillo-claro);
   padding-bottom: 10px;
   font-size: 4rem;
   font-weight: bold;
@@ -193,16 +208,16 @@ footer {
   padding-right: 6px;
   font-size: 1.5rem;
   text-align: justify;
-  color: var(--color-white);
+  color: var(--color-amarillo-brillante);
 }
 .cambtexto {
   cursor: pointer;
-  color: var(--color-white);
+  color: var(--color-verde-oscuro);
   transition: ease all 0.2s;
   padding: 10px;
   border-radius: 10%;
-  background-color: var(--color-red);
-  font-size: 14px;
+  background-color: var(--color-amarillo-resaltado);
+  font-size: 20px;
   border: none;
 }
 .cambtexto:hover {
@@ -211,13 +226,13 @@ footer {
 
 /*areas de practica*/
 .areas {
-  background-color: var(--color-gray);
+  background-color: var(--color-verde-claro);
   padding: 8%;
 }
 .title {
   font-size: 45px;
   text-align: center;
-  color: var(--color-white);
+  color: var(--color-amarillo-resaltado);
   padding-bottom: 5%;
 }
 .areas .conte-areas {
@@ -248,17 +263,17 @@ footer {
   text-align: center;
 }
 .areas .conte-areas .cada-area .grad-area .conte-area svg {
-  color: var(--color-red);
+  color: var(--color-amarillo-resaltado);
   padding-bottom: 10px;
 }
 .areas .conte-areas .cada-area .grad-area .conte-area .text-area {
   font-size: 20px;
-  color: var(--color-white);
+  color: var(--color-amarillo-brillante);
   padding-bottom: 10px;
 }
 /*MODAL*/
 dialog {
-  background-color: var(--color-gray);
+  background-color: var(--color-verde-claro);
   border: none;
   position: fixed;
   inset: 0;
@@ -267,7 +282,7 @@ dialog {
   max-width: 50%;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.8);
-  color: var(--color-white);
+  color: var(--color-amarillo-brillante);
 }
 dialog::backdrop {
   background-color: var(--color-overlay);
@@ -276,7 +291,7 @@ dialog::backdrop {
   font-size: 25px;
   padding-bottom: 8px;
   text-align: center;
-  color: var(--color-white-soft);
+  color: var(--color-amarillo-claro);
 }
 .modal-text {
   font-size: 20px;
@@ -294,7 +309,7 @@ dialog::backdrop {
   font-size: 45px;
   padding-bottom: 5%;
   text-align: center;
-  color: var(--color-white-soft);
+  color: var(--color-amarillo-claro);
 }
 
 .formulario {
@@ -308,22 +323,25 @@ dialog::backdrop {
 }
 
 .formulario p {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 30px;
-  color: var(--color-white);
+  color: var(--color-amarillo-brillante);
 }
 
 .formulario a {
   font-size: 14px;
   display: inline-block;
   width: 100%;
-  color: var(--color-white);
+  color: var(--color-amarillo-resaltado);
   font-weight: bold;
   margin-bottom: 15px;
 }
 
+.formulario a:hover {
+  color: var(--color-hover);
+}
 .formulario a svg {
-  color: var(--color-red);
+  color: var(--color-amarillo-claro);
   margin-right: 10px;
 }
 
@@ -347,11 +365,11 @@ textarea {
 
 .formulario .btn {
   cursor: pointer;
-  color: var(--color-white);
+  color: var(--color-verde-oscuro);
   transition: ease all 0.2s;
   padding: 15px;
   border-radius: 10%;
-  background-color: var(--color-red);
+  background-color: var(--color-amarillo-resaltado);
   font-size: 18px;
   border: none;
 }
@@ -362,7 +380,7 @@ textarea {
 /* ubicacion */
 .mapa {
   padding: 8%;
-  background-color: var(--color-gray);
+  background-color: var(--color-verde-claro);
 }
 
 .map {
@@ -374,14 +392,16 @@ textarea {
 /*FOOTER*/
 
 footer {
-  background-color: var(--color-gray);
+  background-color: var(--color-verde-oscuro);
   padding: 40px 5% 0 40px;
   cursor: default;
   margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 footer hr {
-  border-color: var(--color-red);
+  border-color: var(--color-amarillo-claro);
 }
 
 .tabla {
@@ -390,28 +410,28 @@ footer hr {
 }
 
 .tabla th {
-  color: var(--color-white-soft);
+  color: var(--color-amarillo-resaltado);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   text-align: left;
   padding: 0 50px 1% 50px;
 }
 
 .tabla a {
-  color: var(--color-white-soft);
+  color: var(--color-amarillo-claro);
   padding: 0 50px;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   transition: ease all 1s;
 }
 
 .tabla a:hover {
-  color: var(--color-red);
+  color: var(--color-amarillo-claro);
 }
 
 footer .textfooter {
-  font-size: 12px;
-  color: var(--color-white-soft);
+  font-size: 16px;
+  color: var(--color-amarillo-claro);
   text-align: center;
   padding: 20px 0;
 }
@@ -454,7 +474,7 @@ footer .textfooter {
 .whatsapp-float-btn {
   width: 50px;
   height: 50px;
-  background: var(--color-white);
+  background: var(--color-amarillo-brillante);
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   display: flex;
@@ -483,13 +503,13 @@ footer .textfooter {
 
 /* Colores personalizados para cada red */
 .whatsapp-float-btn.email {
-  background: var(--color-white-soft);
+  background: var(--color-white);
 }
 .whatsapp-float-btn.instagram {
   background: var(--color-instagram);
 }
 .whatsapp-float-btn.tiktok {
-  background: var(--color-black);
+  background: var(--color-negro);
 }
 
 /*-------------------------------------------AMARRES---------------------------------------------------*/
@@ -519,13 +539,13 @@ footer .textfooter {
 
 .servicio-title {
   font-size: 2rem;
-  color: var(--color-red);
+  color: var(--color-amarillo-resaltado);
   margin-bottom: 15px;
 }
 
 .servicio-description {
   font-size: 1.2rem;
-  color: var(--color-white);
+  color: var(--color-amarillo-brillante);
 }
 
 .servicio-img {
@@ -572,26 +592,26 @@ footer .textfooter {
 
 .parallax-title {
   font-size: 2.5rem;
-  color: var(--color-red);
+  color: var(--color-amarillo-resaltado);
   margin-bottom: 20px;
 }
 
 .parallax-text {
-  font-size: 1.2rem;
-  color: var(--color-gray);
+  font-size: 1.5rem;
+  color: var(--color-verde-oscuro);
 }
 
 .toma_accion {
   text-align: center;
   padding: 60px 20px;
-  background-color: var(--color-white-soft);
+  background-color: var(--color-amarillo-brillante);
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   margin: 40px 0;
 }
 .toma_accion h1 {
   font-size: 2rem;
-  color: var(--color-red);
+  color: var(--color-verde-oscuro);
   margin-bottom: 15px;
 }
 
@@ -600,8 +620,8 @@ footer .textfooter {
   margin-top: 25px;
   width: 180px; /* ancho fijo */
   padding: 8px 0; /* menos padding lateral */
-  background-color: var(--color-red);
-  color: var(--color-white);
+  background-color: var(--color-amarillo-resaltado);
+  color: var(--color-verde-oscuro);
   font-size: 1.1rem;
   font-weight: bold;
   border: none;
@@ -633,14 +653,14 @@ footer {
 /*-------------------------------------------LECTURAS---------------------------------------------------*/
 
 .info-section {
-  background: var(--color-black);
+  background: var(--color-verde-oscuro);
   padding: 60px 0;
   display: flex;
   justify-content: center;
 }
 
 .info-container {
-  background: var(--color-gray);
+  background: var(--color-verde-claro);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
   border-radius: 18px;
   padding: 40px 32px;
@@ -652,7 +672,7 @@ footer {
 }
 
 .section-title {
-  color: var(--color-white);
+  color: var(--color-amarillo-resaltado);
   font-size: 2.5rem;
   margin-bottom: 32px;
   text-align: center;
@@ -668,10 +688,10 @@ footer {
 
 .section-text {
   flex: 1;
-  color: var(--color-white-soft);
+  color: var(--color-amarillo-claro);
   font-size: 1.15rem;
   text-align: justify;
-  background: var(--color-gray);
+  background: var(--color-verde-claro);
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
@@ -701,13 +721,13 @@ footer {
 
 .section-video video {
   width: 100%;
-  max-width: 500px; /* Puedes aumentar este valor para hacerlo aún más grande */
+  max-width: 500px;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
 .temas-section {
-  background: var(--color-black);
+  background: var(--color-verde-oscuro);
   padding: 50px 0;
   display: flex;
   justify-content: center;
@@ -723,7 +743,7 @@ footer {
 }
 
 .tema-card {
-  background: var(--color-gray);
+  background: var(--color-verde-claro);
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
   padding: 14px 14px;
@@ -753,23 +773,23 @@ footer {
 }
 
 .tema-title {
-  color: var(--color-white);
+  color: var(--color-amarillo-resaltado);
   font-size: 1.8rem;
   margin-bottom: 8px;
 }
 
 .tema-text {
-  color: var(--color-white);
+  color: var(--color-amarillo-brillante);
   font-size: 1.3rem;
 }
 
 .encabezado {
-  background: var(--color-gray);
+  background: var(--color-verde-claro);
   padding: 40px 20px;
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   font-size: 1.1rem;
-  color: var(--color-white);
+  color: var(--color-amarillo-claro);
 }
 
 /*-------------------------------------------Testimonios---------------------------------------------------*/
@@ -799,8 +819,8 @@ footer {
   min-height: 200px;
   margin: 0 10px;
   box-sizing: border-box;
-  /*     background-color: var(--color-gray-600); */
-  /*     border: 1px solid var(--color-red); */
+  /*     background-color: var(--color-verde-claro-600); */
+  /*     border: 1px solid var(--color-amarillo-claro); */
   border-radius: 8px;
   padding: 20px;
   /*     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
@@ -829,12 +849,12 @@ footer {
 .carrusel-item h3 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: var(--color-white);
+  color: var(--color-amarillo-brillante);
 }
 .carrusel-item p {
   font-size: 1.1rem;
   line-height: 1.4;
-  color: var(--color-white-soft);
+  color: var(--color-amarillo-claro);
 }
 
 /* Botones de navegación */
@@ -842,8 +862,8 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--color-gray);
-  color: var(--color-white);
+  background-color: var(--color-verde-claro);
+  color: var(--color-amarillo-brillante);
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -861,8 +881,8 @@ footer {
 }
 
 .testimonio {
-  background-color: var(--color-gray);
-  color: var(--color-white);
+  background-color: var(--color-verde-claro);
+  color: var(--color-amarillo-brillante);
   text-align: center;
   padding: 40px 20px;
   border-radius: 8px;
@@ -870,9 +890,17 @@ footer {
   margin: 20px auto;
   max-width: 800px;
 }
-.testimonio a {
-  color: var(--color-white);
+
+.testimonio p a {
+  color: var(--color-amarillo-resaltado);
+  font-weight: 700;
+  text-decoration: underline;
 }
+
+.testimonio p a:hover {
+  color: var(--color-amarillo-claro);
+}
+
 .testimonio h1 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -1032,7 +1060,7 @@ video {
     font-size: 28px;
   }
   .areas .title {
-    color: var(--color-white);
+    color: var(--color-amarillo-resaltado);
   }
 
   /* Formulario: single column and flexible textarea */
@@ -1087,9 +1115,9 @@ video {
   }
   .tabla th {
     margin-top: 20px;
-    font-size: 18px;
-    color: var(--color-white);
-    border-bottom: 1px solid rgba(167, 52, 52, 0.4);
+    font-size: 16px;
+    color: var(--color-amarillo-resaltado);
+    border-bottom: 1px solid var(--color-amarillo-claro);
     padding-bottom: 6px !important;
     margin-bottom: 10px;
   }
@@ -1097,7 +1125,7 @@ video {
     margin-bottom: 8px;
   }
   .tabla a {
-    font-size: 14px;
+    font-size: 16px;
     padding: 0;
   }
 
