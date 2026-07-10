@@ -8,3 +8,5 @@ Thumbs.db
 # Configuraciones locales de tu editor de código
 .vscode/
 *.log
+
+.venv/

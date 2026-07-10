@@ -6,11 +6,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Testimonios</title>
   </head>
-  <body>
-
+  <body class="page-testimonios">
     <!-- HEADER -->
     <header class="header">
-
       <nav class="navbar">
         <button class="navbar-toggle" aria-label="Abrir menú">
           <span class="hamburger"></span>
@@ -39,47 +37,70 @@
           >Contáctanos</a
         >
       </div>
-
     </header>
 
     <main>
+      <section class="testimonios-intro">
+        <h2>La Voz de Quienes Han Recuperado su Camino</h2>
+        <p>
+          Cada consulta, amarre y lectura de tarot se realiza con el mayor
+          respeto y compromiso. Aquí compartimos algunas de las experiencias de
+          personas que han transformado su vida gracias a nuestra guía
+          espiritual.
+        </p>
+      </section>
 
-      <section class="carrusel">
-        <button class="carrusel-btn prev">❮</button>
-        <div class="carrusel-container">
-          <div class="carrusel-item">
-            <h3 class="carrusel-title">Testimonio 1</h3>
-            <p class="carrusel-text">
-              "Gracias a Felipe, encontré claridad en mi vida. ¡Recomendado!"
+      <section class="testimonios-grid">
+        <div class="testimonio-card">
+          <blockquote class="testimonio-texto">
+            <p>
+              "Gracias a las lecturas y las asesorías encontré la claridad que
+              necesitaba para mi negocio."
             </p>
-          </div>
-          <div class="carrusel-item">
-            <h3 class="carrusel-title">Testimonio 2</h3>
-            <p class="carrusel-text">
-              "Los productos naturales son de excelente calidad. Me encantaron."
-            </p>
-          </div>
-          <div class="carrusel-item">
-            <h3 class="carrusel-title">Testimonio 3</h3>
-            <p class="carrusel-text">
-              "La lectura del tarot fue precisa y me ayudó a tomar decisiones
-              importantes."
-            </p>
-          </div>
-          <div class="carrusel-item">
-            <h3 class="carrusel-title">Testimonio 4</h3>
-            <p class="carrusel-text">
-              "Felipe es muy profesional y confiable. ¡Gracias por tu ayuda!"
-            </p>
-          </div>
-          <div class="carrusel-item">
-            <h3 class="carrusel-title">Testimonio 5</h3>
-            <p class="carrusel-text">
-              "Recomiendo sus servicios a todos los que buscan guía espiritual."
-            </p>
+            <cite>— Carlos R., Miami</cite>
+          </blockquote>
+          <div class="testimonio-evidencia">
+            <img src="img/cartas-y-dinero.jpg" alt="Evidencia de prosperidad" />
           </div>
         </div>
-        <button class="carrusel-btn next">❯</button>
+
+        <div class="testimonio-card">
+          <blockquote class="testimonio-texto">
+            <p>
+              "El amarre restauró la comunicación con mi pareja. Muy
+              agradecida."
+            </p>
+            <cite>— María L., Ciudad de México</cite>
+          </blockquote>
+          <div class="testimonio-evidencia">
+            <img src="img/cartas-con-vela.jpg" alt="Evidencia de amarre" />
+          </div>
+        </div>
+
+        <div class="testimonio-card">
+          <blockquote class="testimonio-texto">
+            <p>
+              "Me ayudaron a atraer oportunidades, mi economía mejoró
+              notablemente."
+            </p>
+            <cite>— Ana S., Monterrey</cite>
+          </blockquote>
+          <div class="testimonio-evidencia">
+            <img src="img/velas.jpg" alt="Evidencia de trabajo" />
+          </div>
+        </div>
+
+        <div class="testimonio-card">
+          <blockquote class="testimonio-texto">
+            <p>
+              "Profesionales y respetuosos. Recibí guía precisa y resultados."
+            </p>
+            <cite>— Jorge P., San Antonio</cite>
+          </blockquote>
+          <div class="testimonio-evidencia">
+            <img src="img/velas2.jpg" alt="Evidencia ritual" />
+          </div>
+        </div>
       </section>
 
       <section class="testimonio">
@@ -97,9 +118,8 @@
           >Contáctanos</a
         >
       </section>
-
     </main>
-    
+
     <!-- footer -->
     <footer>
       <table class="tabla">
@@ -112,10 +132,7 @@
           <td><a href="index.html">Inicio</a></td>
           <td><a href="https://wa.me/12106052671">+1 (210)5785867</a></td>
           <td>
-            <a
-              href="https://www.facebook.com/share/18ZnYRfC2R/"
-              >Facebook</a
-            >
+            <a href="https://www.facebook.com/share/18ZnYRfC2R/">Facebook</a>
           </td>
         </tr>
         <tr>
@@ -179,41 +196,6 @@
       </a>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const carruselContainer = document.querySelector(".carrusel-container");
-        const items = document.querySelectorAll(".carrusel-item");
-        const prevBtn = document.querySelector(".carrusel-btn.prev");
-        const nextBtn = document.querySelector(".carrusel-btn.next");
-        let currentIndex = 0;
-
-        function updateCarrusel() {
-          const itemStyle = getComputedStyle(items[0]);
-          const itemMargin =
-            parseFloat(itemStyle.marginLeft || 0) +
-            parseFloat(itemStyle.marginRight || 0);
-          const itemWidth = items[0].offsetWidth + itemMargin;
-          carruselContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        }
-
-        prevBtn.addEventListener("click", () => {
-          if (currentIndex > 0) {
-            currentIndex--;
-            updateCarrusel();
-          }
-        });
-
-        nextBtn.addEventListener("click", () => {
-          if (currentIndex < items.length - 1) {
-            currentIndex++;
-            updateCarrusel();
-          }
-        });
-
-        window.addEventListener("resize", updateCarrusel);
-        updateCarrusel();
-      });
-    </script>
     <script src="js/script.js" defer></script>
   </body>
 </html>
